@@ -24,15 +24,12 @@ int main() {
 
 int copy_file(const char *src, const char *dst)
 {
-    int fd_s, fd_d, n, m;
+    int fd_s, fd_d, n;
     char buffer[BUFSIZE];
-    if ((fd_s = open(src, O_RDONLY)) == -1)
-    {
+    if ((fd_s = open(src, O_RDONLY)) == -1){
         fatal("source file error");
     }
-
-    if ((fd_d = open(dst, O_CREAT | O_WRONLY | O_TRUNC, PERM)) == -1)
-    {
+    if ((fd_d = open(dst, O_CREAT | O_WRONLY | O_TRUNC, PERM)) == -1){
         fatal("file create error");
     }
 
