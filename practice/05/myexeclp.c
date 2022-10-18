@@ -98,6 +98,9 @@ int myexecve_to_absolute_path(const char *file, char *const argv[], char *const 
     strcpy(filepath,getcwd(NULL, 0));
     strcat(filepath,"/");
     strcat(filepath,file);
+
+    printf("%s\n",getenv("PATH"));
+
     // printf("%s\n",filepath);
     return execve(filepath,argv,envp);
 }
