@@ -11,6 +11,7 @@ int main(void){
         exit(1);
     }
     close(1);
+    // close(STDOUT_FILENO);    //STDOUT_FILENO  = 1 in linux
     fd1 = dup(fd);
     printf("Ori FD = %d\n", fd);
     printf("DUP FD = %d\n", fd1);
