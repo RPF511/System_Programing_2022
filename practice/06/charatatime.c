@@ -19,11 +19,15 @@ int main(void){
         perror("fork error\n");
         exit(1);
     } else if (pid == 0){
-        // pause();
+        // printf("here\n");
+        pause();
+        // printf("here\n");
         charatatime("output from child\n");
+        
     }else{
         charatatime("output from parent\n");
-        // kill(pid, SIGALRM);
+        // sleep(3);
+        kill(pid, SIGALRM);
     }
     exit(0);
 }
